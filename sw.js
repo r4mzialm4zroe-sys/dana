@@ -1,10 +1,10 @@
 // Offline worker. Bump CACHE on every release so phones pick up the update.
 const PREFIX = 'dana-';
-const CACHE = PREFIX + 'dana-1.3';
+const CACHE = PREFIX + 'dana-1.4';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/apple-touch-icon.png',
-  './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './adhan.m4a', './dana_call.mp3', './dana_hello.mp3', './dana_morning.mp3', './dana_evening.mp3', './dana_before.mp3', './dana_thursday.mp3'];
+  './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './adhan.m4a', './voice2_call.mp3', './voice2_hello.mp3', './voice2_morning.mp3', './voice2_evening.mp3', './voice2_before.mp3', './voice2_thursday.mp3'];
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   // Only our own old caches: another app on this origin keeps its files.
