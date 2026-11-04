@@ -1,8 +1,8 @@
 // Offline worker. Bump CACHE on every release so phones pick up the update.
 const PREFIX = 'dana-';
-const CACHE = PREFIX + 'dana-1.4';
+const CACHE = PREFIX + 'dana-1.5';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/apple-touch-icon.png',
-  './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './adhan.m4a', './voice2_call.mp3', './voice2_hello.mp3', './voice2_morning.mp3', './voice2_evening.mp3', './voice2_before.mp3', './voice2_thursday.mp3'];
+  './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './adhan.m4a', './voice2_call.mp3', './voice2_hello.mp3', './voice3_morning.mp3', './voice3_evening.mp3', './voice2_before.mp3', './voice2_thursday.mp3'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
