@@ -1,8 +1,8 @@
 // Offline worker. Bump CACHE on every release so phones pick up the update.
 const PREFIX = 'dana-';
-const CACHE = PREFIX + 'dana-1.1';
+const CACHE = PREFIX + 'dana-1.2';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/apple-touch-icon.png',
-  './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './adhan.m4a', './dana_call.mp3', './dana_hello.mp3'];
+  './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './adhan.m4a', './dana_call.mp3', './dana_hello.mp3', './dana_thursday.mp3'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
