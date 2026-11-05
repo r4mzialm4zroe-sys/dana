@@ -1,6 +1,6 @@
 // Offline worker. Bump CACHE on every release so phones pick up the update.
 const PREFIX = 'dana-';
-const CACHE = PREFIX + 'dana-1.8';
+const CACHE = PREFIX + 'dana-1.9';
 // Quran fonts/layout never change between releases: own cache, kept across updates.
 const QCACHE = PREFIX + 'quran-v1';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/apple-touch-icon.png',
